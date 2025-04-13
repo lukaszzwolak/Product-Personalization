@@ -36,6 +36,7 @@ const Product = props => {
                   <button
                     type="button"
                     className={clsx(size.name === currentSize && styles.active)}
+                    onClick={() => setCurrentSize(size.name)}
                   >
                     {size.name}
                   </button>
@@ -55,6 +56,7 @@ const Product = props => {
                       prepareColorClassName(color),
                       color === currentColor && styles.active
                     )}
+                    onClick={() => setCurrentColor(color)}
                   />
                 </li>
               ))}
