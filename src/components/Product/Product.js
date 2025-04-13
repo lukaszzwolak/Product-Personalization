@@ -44,10 +44,10 @@ const Product = props => {
   )
 };
 
-Product.PropTypes = {
-  id: PropTypes.string.isRequired,
+Product.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  basePrice: PropTypes.string.isRequired,
+  basePrice: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   sizes: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
