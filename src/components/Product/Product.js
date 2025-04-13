@@ -13,10 +13,12 @@ const Product = props => {
   };
 
   const getPrice = () => {
-    const selectedSize = props.size.find(size => size.name === currentSize);
-    //?zamiast sprawdzania recznego czy istnieje
-    return props.basePrice + (selectedSize?.additionalPrice || 0);
+    if (!props.sizes || props.sizes.length === 0) return props.basePrice;
+
+    const selectedSize = props.sizes.find(size => size.name === currentSize);
+    return props.basePrice + (selectedSize.additionalPrice || 0);
   };
+
 
   return (
     <article className={styles.product}>
