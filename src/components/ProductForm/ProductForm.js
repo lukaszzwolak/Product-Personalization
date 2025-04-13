@@ -13,14 +13,14 @@ const ProductForm = ({
     currentSize,
     setCurrentColor,
     setCurrentSize,
-    getPrice
+    price,
 }) => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log('SUMMARY');
         console.log('===============');
         console.log('Product:', title);
-        console.log('Price:', getPrice());
+        console.log('Price:', price);
         console.log('Size:', currentSize);
         console.log('Color:', currentColor);
     };
@@ -53,7 +53,7 @@ ProductForm.propTypes = {
     currentSize: PropTypes.string.isRequired,
     setCurrentColor: PropTypes.func.isRequired,
     setCurrentSize: PropTypes.func.isRequired,
-    getPrice: PropTypes.func.isRequired,
+    price: PropTypes.number.isRequired,
 };
 
 export default ProductForm;
