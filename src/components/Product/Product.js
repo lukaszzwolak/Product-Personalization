@@ -14,10 +14,20 @@ const Product = props => {
 
   const getPrice = () => {
     if (!props.sizes || props.sizes.length === 0) return props.basePrice;
-
     const selectedSize = props.sizes.find(size => size.name === currentSize);
     return props.basePrice + (selectedSize.additionalPrice || 0);
   };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    console.log('SUMMARY');
+    console.log('===============');
+    console.log('Product:', props.title);
+    console.log('Price:', getPrice());
+    console.log('Size:', currentSize);
+    console.log('Color:', currentColor);
+  }
 
 
   return (
@@ -35,7 +45,7 @@ const Product = props => {
           <span className={styles.price}>Price: {getPrice()}$</span>
         </header>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className={styles.sizes}>
             <h3 className={styles.optionLabel}>Sizes</h3>
             <ul className={styles.choices}>
