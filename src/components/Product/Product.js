@@ -19,7 +19,7 @@ const Product = props => {
       <ProductImage
         name={props.name}
         title={props.title}
-        currentColor={props.currentColor}
+        currentColor={currentColor}
       />
 
       <div>

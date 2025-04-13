@@ -7,7 +7,7 @@ const ProductImage = ({ name, title, currentColor }) => {
             <img
                 className={styles.image}
                 alt={title}
-                src={`${process.env.PUBLIC_URL}/images/products/shirt-$(name)--$(currentColor).jpg`}
+                src={`${process.env.PUBLIC_URL}/images/products/shirt-${name}--${currentColor}.jpg`}
             />
         </div>
     );
